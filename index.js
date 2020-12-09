@@ -170,10 +170,18 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-    /*add your code here*/
+  if (user === computer){
+    return "it's a tie"
+  }
+  else if ((user === 'scissors' && computer === 'paper') || (user === 'paper' && computer === 'rock') ||(user === 'rock' && computer === 'scissors')){
+    return "you win!"
+  }
+  else if ((user === 'scissors' && computer === 'rock') || (user === 'paper' && computer === 'scissors') || (user === 'rock' && computer === 'paper')){
+    return "you lose!"
+  }
+  
 }
-  
-  
+
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -186,8 +194,8 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometers){
+    return kilometers * 0.621371
   }
 
 
@@ -200,8 +208,8 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(centimeters){
+    return centimeters / 30.48
   }
  
 
@@ -216,9 +224,13 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
+function annoyingSong(start){
+  while (start > 0){
+  let next = (start - 1);
+  return (start + " bottles of soda on the wall, " + start + " bottles of soda, take one down pass it around " + next + " bottles of soda on the wall");
+    start = next;
+}
+}
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -236,8 +248,22 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  if (score >=90 && score <= 100){
+    return "you got an A"
+  }
+  else if (score < 90 && score >= 80){
+    return "you got a B"
+  }
+  else if (score < 80 && score >= 70){
+    return "you got a C"
+  }
+  else if (score < 70 && score >= 60){
+    return "you got a D"
+  }
+  else if (score < 60){
+    return "you got an F"
+  }
   }
   
   
